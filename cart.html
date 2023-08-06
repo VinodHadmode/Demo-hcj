@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CartPage</title>
+    <style>
+        .container {
+            border: 1px solid grey;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: auto;
+            gap: 20px;
+        }
+
+        .container>div {
+            border: 1px solid black;
+            text-align: center;
+        }
+
+        .container>div>img {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>CartPage</h1>
+    <div class="container">
+
+    </div>
+</body>
+
+</html>
+
+<script>
+    let cartData = JSON.parse(localStorage.getItem("cartData")) || []
+    console.log(cartData);
+    displayProducts(cartData)
+
+    function displayProducts(data) {
+
+        document.querySelector(".container").innerHTML = ""
+
+        data.forEach(elem => {
+            let div = document.createElement("div")
+
+            let prodImage = document.createElement("img")
+            prodImage.setAttribute("src", elem.image)
+
+            let title = document.createElement("h2")
+            title.innerText = `title :${elem.title}`
+
+            let price = document.createElement("p")
+            price.innerText =`Price :${elem.price}` 
+
+            let rating = document.createElement("p")
+            rating.innerText =`rating :${elem.rating.rate}` 
+
+
+            div.append(prodImage, title, price, rating)
+            document.querySelector(".container").append(div)
+        });
+    }
+</script>
