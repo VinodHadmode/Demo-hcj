@@ -1,5 +1,5 @@
 
-
+//promise
 function test() {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
@@ -13,6 +13,18 @@ function test() {
     })
 }
 
-// console.log(test());
-test().then((res) => console.log(res))
-    .catch((err) => console.log(err))
+//class
+
+class Person {
+    constructor(name,age,city){
+        this.name=name;
+        this.age=age;
+        this.city=city
+    }
+    printCity (){
+        console.log(`${this.city} is my city`);
+    }
+}
+
+const Person1=new Person("Vinod",27,"Pune")
+Person1.printCity()
