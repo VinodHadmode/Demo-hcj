@@ -37,3 +37,10 @@ Person1.printCity()
 //5. child selector
 //6. attribute selector input[type="text"]
 //7. psudo class selector
+
+//positions in css
+//1. Static-default position
+//2. Relative
+//3. Absoulute
+//4. Fixed
+//5. Sticky
